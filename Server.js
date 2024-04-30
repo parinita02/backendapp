@@ -4,12 +4,21 @@ const cors = require("cors")
 require('dotenv').config();
 
 // const dburl ="mongodb://localhost:27017/projectdb"
-const dburl = process.env.mongodburl
+// const dburl = process.env.mongodburl
+// mongoose.connect(dburl).then(() => {
+//     console.log("Connected to DB Successfully")
+// }).catch((err) => {
+//     console.log(err.message)
+// });
+
+//mongodb atlas  connection 
+const dburl ="mongodb+srv://admin:admin@cluster0.bbqndwe.mongodb.net/projectdb?retryWrites=true&w=majority"
 mongoose.connect(dburl).then(() => {
-    console.log("Connected to DB Successfully")
+    console.log("Connected to MongoDB Atlas successfully")
 }).catch((err) => {
     console.log(err.message)
 });
+
 
 const app = express() 
 app.use(express.json()) 
